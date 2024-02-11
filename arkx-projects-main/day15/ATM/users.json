@@ -1,0 +1,53 @@
+[
+  {
+    "ID de compte": "ACC1001",
+    "nom": "John Doe",
+    "épingle": "1234",
+    "solde": 1500,
+    "transactions": [
+      {
+        "type": "dépôt",
+        "montant": 5000,
+        "date": "01/02/2024"
+      },
+      {
+        "type": "retirer",
+        "montant": 200,
+        "date": "02/02/2024"
+      },
+      {
+        "type": "dépôt",
+        "montant": 100,
+        "date": "11/02/2024"
+      },
+      {
+        "type": "dépôt",
+        "montant": 100,
+        "date": "11/02/2024"
+      },
+      {
+        "type": "retirer",
+        "montant": 200,
+        "date": "11/02/2024"
+      }
+    ]
+  },
+  {
+    "ID de compte": "ACC1002",
+    "nom": "Jane Smith",
+    "épingle": "4321",
+    "solde": 2200,
+    "transactions": [
+      {
+        "type": "dépôt",
+        "montant": 1000,
+        "date": "03/02/2024"
+      },
+      {
+        "type": "retirer",
+        "montant": 300,
+        "date": "04/02/2024"
+      }
+    ]
+  }
+]
