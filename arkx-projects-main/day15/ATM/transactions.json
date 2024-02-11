@@ -1,0 +1,22 @@
+[
+  {
+    "type": "dépôt",
+    "montant": 10000,
+    "date": "11/02/2024"
+  },
+  {
+    "type": "retirer",
+    "montant": 1000,
+    "date": "11/02/2024"
+  },
+  {
+    "type": "retirer",
+    "montant": 3000,
+    "date": "11/02/2024"
+  },
+  {
+    "type": "retirer",
+    "montant": 100,
+    "date": "11/02/2024"
+  }
+]

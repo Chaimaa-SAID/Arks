@@ -54,7 +54,7 @@
     "ID de compte": "12c34",
     "nom": "chaimaa",
     "épingle": "1000",
-    "solde": 6000,
+    "solde": 5900,
     "transactions": [
       {
         "type": "dépôt",
@@ -69,6 +69,11 @@
       {
         "type": "retirer",
         "montant": 3000,
+        "date": "11/02/2024"
+      },
+      {
+        "type": "retirer",
+        "montant": 100,
         "date": "11/02/2024"
       }
     ]
