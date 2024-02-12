@@ -71,23 +71,35 @@ async function deposit(user, amount) {
 
 async function withdraw(user, amount) {
     try {
-        if (amount > MAX_WITHDRAWAL_AMOUNT) {
-            throw new Error(`Le montant de retrait dépasse la limite autorisée de ${MAX_WITHDRAWAL_AMOUNT} dh.`);
-        }
-        
         const userData = await fs.readFile('users.json', 'utf8');
         const users = JSON.parse(userData);
         const currentUser = users.find(u => u['ID de compte'] === user['ID de compte']);
+
+        if (amount > MAX_WITHDRAWAL_AMOUNT) {
+            throw new Error(`Le montant de retrait dépasse la limite autorisée de ${MAX_WITHDRAWAL_AMOUNT} dh.`);
+        }
+
         if (currentUser.solde < amount) {
             throw new Error('Fonds insuffisants');
         }
+
         currentUser.solde -= amount;
         currentUser.transactions.push({ type: 'retirer', montant: amount, date: new Date().toLocaleDateString() });
         await saveUserData(users, currentUser.transactions);
-        console.log(`Retrait de ${amount} du compte de ${user.nom}.`);
+        console.log(`Retrait de ${amount} dh du compte de ${user.nom}.`);
     } catch (error) {
-        console.error('Erreur lors du retrait:', error);
+        if (error.message.startsWith('Le montant de retrait dépasse la limite autorisée')) {
+            console.log(error.message);
+            await withdrawPrompt(user); // Appel de la fonction de retrait avec une nouvelle invitation
+        } else {
+            console.error('Erreur lors du retrait:', error);
+        }
     }
+}
+
+async function withdrawPrompt(user) {
+    const newAmount = parseFloat(await askQuestion('Entrez un nouveau montant à retirer: '));
+    await withdraw(user, newAmount);
 }
 
 async function checkBalance(user) {
@@ -135,7 +147,7 @@ const rl = readline.createInterface({
                     break;
                 case '3':
                     const withdrawAmount = parseFloat(await askQuestion('Entrez le montant à retirer: '));
-                    await eventEmitter.emit('withdraw', user, withdrawAmount);
+                    await withdraw(user, withdrawAmount);
                     break;
                 case '4':
                     eventEmitter.emit('viewTransactions', user);

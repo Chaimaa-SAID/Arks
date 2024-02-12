@@ -54,7 +54,7 @@
     "ID de compte": "12c34",
     "nom": "chaimaa",
     "épingle": "1000",
-    "solde": 5900,
+    "solde": 4900,
     "transactions": [
       {
         "type": "dépôt",
@@ -75,6 +75,29 @@
         "type": "retirer",
         "montant": 100,
         "date": "11/02/2024"
+      },
+      {
+        "type": "retirer",
+        "montant": 1000,
+        "date": "12/02/2024"
+      }
+    ]
+  },
+  {
+    "ID de compte": "a8aa3",
+    "nom": "AISSAM",
+    "épingle": "6672",
+    "solde": 95000,
+    "transactions": [
+      {
+        "type": "dépôt",
+        "montant": 100000,
+        "date": "12/02/2024"
+      },
+      {
+        "type": "retirer",
+        "montant": 5000,
+        "date": "12/02/2024"
       }
     ]
   }
