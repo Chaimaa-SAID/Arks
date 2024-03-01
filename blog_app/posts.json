@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "title": "Premier post",
+    "content": "Ceci est le contenu du premier post. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et velit ut libero porttitor lacinia eu eget ex."
+  },
+  {
+    "id": 2,
+    "title": "Deuxième post",
+    "content": "Ceci est le contenu du deuxième post. Fusce scelerisque libero non est ullamcorper, nec dictum metus malesuada. Duis id facilisis ligula."
+  },
+  {
+    "id": 3,
+    "title": "Troisième post",
+    "content": "Ceci est le contenu du troisième post. Aenean facilisis orci a suscipit blandit. Integer volutpat consectetur metus at consequat."
+  },
+  {
+    "id": 4,
+    "title": "post",
+    "content": "text"
+  }
+]
